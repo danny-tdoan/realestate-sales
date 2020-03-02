@@ -57,7 +57,7 @@ def extract_one_property(suburb_name, property):
     except:
         # if fail, try to get the pass in
         outcome = property.find('li', {'class': PASSEDIN_CLASS})
-        if len(outcome)>0:
+        if len(outcome) > 0:
             outcome_sold = "Passed in"
             outcome_price = -1
 
@@ -75,7 +75,8 @@ def extract_one_property(suburb_name, property):
 
 def extract_one_suburb_section(suburb):
     try:
-        suburb_name = suburb.find('header', {'class': SUBURB_CLASS}).find('h3').text
+        suburb_name = suburb.find(
+            'header', {'class': SUBURB_CLASS}).find('h3').text
     except:
         suburb_name = "Unable to extract"
 
